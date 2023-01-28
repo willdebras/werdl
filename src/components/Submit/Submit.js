@@ -12,8 +12,8 @@ function Submit({guesses, setGuesses}) {
     } 
 
   return (
-    <form class="guess-input-wrapper" onSubmit={(event) => submitHandler(event)}>
-        <label for="guess-input">Enter guess:</label>
+    <form className="guess-input-wrapper" onSubmit={(event) => submitHandler(event)}>
+        <label htmlFor="guess-input">Enter guess:</label>
         <input id="guess-input" value={submitText} onChange={(event)=>setSubmitText(event.target.value)} type="text" />
     </form>
   );
