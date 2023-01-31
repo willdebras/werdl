@@ -1,4 +1,5 @@
 import React from 'react';
+import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
 function Submit({guesses, setGuesses, gameStatus, setGameStatus, answer}) {
     const [submitText, setSubmitText] = React.useState('')
@@ -9,7 +10,7 @@ function Submit({guesses, setGuesses, gameStatus, setGameStatus, answer}) {
 
         // do not form submit if guess is less than 5 letters
         if(newGuess.length < 5) return
-        
+
         // set the guess to state and then clear the input
         setGuesses([...guesses, newGuess])
         setSubmitText('')
@@ -17,7 +18,7 @@ function Submit({guesses, setGuesses, gameStatus, setGameStatus, answer}) {
         // if the guess is correct set the game status to won
         if(newGuess === answer) setGameStatus('won')
         // if we have maxed the number of guesses set the status to lost
-        if(guesses.length === 5) setGameStatus('lost') 
+        if([...guesses, newGuess].length === NUM_OF_GUESSES_ALLOWED ) setGameStatus('lost') 
     } 
 
   return (
