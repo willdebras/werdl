@@ -51,6 +51,7 @@ header {
   height: var(--header-height);
   border-bottom: 1px solid var(--color-gray-700);
   color: var(--color-gray-300);
+  flex-wrap:wrap;
 }
 
 header .side {
@@ -59,11 +60,16 @@ header .side {
   place-content: center;
 }
 
+header p {
+  width:100%;
+  text-align:center;
+}
+
 h1 {
-  flex: 1;
   font-size: 2rem;
   line-height: var(--header-height);
   text-align: center;
+  widtH:100%;
 }
 
 @media (max-width: 25rem) {
