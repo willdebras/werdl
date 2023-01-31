@@ -16,7 +16,10 @@ function Submit({guesses, setGuesses, gameStatus, setGameStatus, answer}) {
         setSubmitText('')
 
         // if the guess is correct set the game status to won
-        if(newGuess === answer) setGameStatus('won')
+        if(newGuess === answer) {
+          setGameStatus('won')
+          return
+        }
         // if we have maxed the number of guesses set the status to lost
         if([...guesses, newGuess].length === NUM_OF_GUESSES_ALLOWED ) setGameStatus('lost') 
     } 
